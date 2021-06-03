@@ -41,41 +41,42 @@ class Trip {
 
 // ELECCIÓN DE CIUDAD
 
-let city = () => prompt("Elige entre Tokio, Shangai, Hong Kong y Singapur.");
-
-let cityChosen = city().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
-
-// NUMERO DE PASAJEROS
-
-let passengers = 1;
-
-function numbersPassengers () {
-  passengers = parseInt(prompt("Ingrese el numero de pasajeros, recordá que se agrega un 5% \
-  de descuento por cada persona que se suma (max. 4 pasajeros)"))
-}
-numbersPassengers();
-
-// DESCUENTO APLICADO
-
 let discount = 1
 
-// NUEVA INSTANCIA DE VIAJE GUARDANDO EN UN ARRAY VACIO
+let tripChosen = []
 
-const tripChosen = [];
+ function chooseTrip() {
 
-tripChosen.push(new Trip(cityChosen, passengers, discount));
+    let city = document.getElementById("city").value;  
 
-tripChosen[0].discountRate();
+    let cityChosen = city.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
 
-/*
-alert("La ciudad elegida fue " + tripChosen[0].city);
-alert("Numero de pasajeros: " + tripChosen[0].numbersPassengers);
-alert("El precio total para de el viaje es " + tripChosen[0].priceAir());
-*/
+    let passengers = document.getElementById("passengers").value;
 
-document.getElementById("title").innerHTML = "Resumen";
-document.getElementById("city").innerHTML = ("La ciudad elegida fue " + tripChosen[0].city);
-document.getElementById("numberPassengers").innerHTML = ("Numero de pasajeros: " + 
-tripChosen[0].numbersPassengers);
-document.getElementById("priceAir").innerHTML = ("El precio total para de el viaje es " + 
-tripChosen[0].priceAir());
+    tripChosen.push(new Trip(cityChosen, passengers, discount));
+
+
+    }
+console.log(tripChosen[0])
+
+//NUEVA INSTANCIA DE VIAJE GUARDANDO EN UN ARRAY VACIO
+
+//const tripChosen = [];
+
+//function tripPrice() {
+
+  //  tripChosen.push(new Trip(cityChosen, passengers, discount));
+
+    //console.log(tripChosen);
+
+//}
+
+//tripPrice();
+//tripChosen[0].discountRate();
+
+//document.getElementById("title").innerHTML = "Resumen";
+//document.getElementById("city").innerHTML = ("La ciudad elegida fue " + tripChosen[0].city);
+//document.getElementById("numberPassengers").innerHTML = ("Numero de pasajeros: " + 
+//tripChosen[0].numbersPassengers);
+//document.getElementById("priceAir").innerHTML = ("El precio total para de el viaje es " + 
+//tripChosen[0].priceAir());

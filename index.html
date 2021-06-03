@@ -13,6 +13,8 @@
     
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
+
+    
   </head>
 
   <body>
@@ -30,17 +32,36 @@
   <main>
     <h1>Vive la experiencia de conocer Asia</h1>
     <p class="fs-5 col-md-8">En nuestro sitio podrás rápidamente conocer el precio de volar a las principales ciudades del continente asiático. Elige entre Tokio, Shangai, Hong Kong y Singapur, la cantidad de pasajeros y conoce rápidamente el precio de los áreos.</p>
+  </br>
 
-  <!--  <div class="mb-5">
-      <a href="../examples/" class="btn btn-primary btn-lg px-4">Calcular precio</a>
-    </div>-->
+  <!-- ELECCIÓN DE CIUDAD -->
+  <form>
+  <svg width="40" height="32">
+    <image href="1.png" width="40" height="32"/>
+  </svg>
+    <span>Elige entre Tokio, Shangai, Hong Kong y Singapur.</span>
+    </br>
+    </br>
+  <input id="city" type="text" placeholder="Destino">
+  </br>
+  </br>
 
-  <h3 id="title" class="fs-4"></h3>        
-  <p id="city" class="fs-5 col-md-8"></p>
-  <p id="numberPassengers" class="fs-5 col-md-8"></p>
-  <p id="priceAir"class="fs-5 col-md-8" ></p>
+  <!-- CANTIDAD DE PASAJEROS -->
+  <svg width="40" height="32">
+    <image href="2.png" width="40" height="32"/>
+  </svg>
+    <span>Ingrese el numero de pasajeros, recordá que se agrega un 5% de descuento por cada persona que se incorpora.</span>
+    </br>
+  </br>
+  <input id="passengers" type="number" placeholder=" Máximo 4 pasajeros" max="4" required>
+  </br>
+  </br>
 
-    <script src="js/miarchivo.js"></script> 
-      
+  <!-- PRECIO DEL PASAJE -->
+  <button type="button" onclick="chooseTrip()">Calcular viaje</button>
+
+</form>
+
+      <script src="js/miarchivo.js"></script> 
   </body>
 </html>
