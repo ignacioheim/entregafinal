@@ -41,42 +41,28 @@ class Trip {
 
 // ELECCIÓN DE CIUDAD
 
-let discount = 1
+let discount = 1;
 
 let tripChosen = []
 
- function chooseTrip() {
-
+function chooseTrip() {
+    // Se capturan los valores
     let city = document.getElementById("city").value;  
-
     let cityChosen = city.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
-
     let passengers = document.getElementById("passengers").value;
-
+    // Se inserta dentro del array
     tripChosen.push(new Trip(cityChosen, passengers, discount));
-
-
+    // Se llama a la función
+    renderResult();
     }
-console.log(tripChosen[0])
-
-//NUEVA INSTANCIA DE VIAJE GUARDANDO EN UN ARRAY VACIO
-
-//const tripChosen = [];
-
-//function tripPrice() {
-
-  //  tripChosen.push(new Trip(cityChosen, passengers, discount));
-
-    //console.log(tripChosen);
-
-//}
-
-//tripPrice();
-//tripChosen[0].discountRate();
-
-//document.getElementById("title").innerHTML = "Resumen";
-//document.getElementById("city").innerHTML = ("La ciudad elegida fue " + tripChosen[0].city);
-//document.getElementById("numberPassengers").innerHTML = ("Numero de pasajeros: " + 
-//tripChosen[0].numbersPassengers);
-//document.getElementById("priceAir").innerHTML = ("El precio total para de el viaje es " + 
-//tripChosen[0].priceAir());
+    function renderResult() {
+    const lastTrip = tripChosen.slice(-1);
+    lastTrip[0].discountRate();
+    localStorage.setItem("Trip", JSON.stringify(lastTrip));
+    document.getElementById("title").innerHTML = "Resumen";
+    document.getElementById("city").innerHTML = ("La ciudad elegida fue " + lastTrip[0].city);
+    document.getElementById("numberPassengers").innerHTML = ("Numero de pasajeros: " + 
+    lastTrip[0].numbersPassengers);
+    document.getElementById("priceAir").innerHTML = ("El precio total para de el viaje es " + 
+    lastTrip[0].priceAir());
+    }
