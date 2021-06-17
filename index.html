@@ -14,7 +14,7 @@
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -35,7 +35,7 @@
   </br>
 
   <!-- ELECCIÓN DE CIUDAD -->
-  <form>
+  <form id="form">
   <svg width="40" height="32">
     <image href="1.png" width="40" height="32"/>
   </svg>
@@ -56,20 +56,14 @@
   <input id="passengers" type="number" placeholder=" Máximo 4 pasajeros" max="4">
   </br>
   </br>
+  <input type="submit" value="Calcular viaje"></input>
+</form>
 
-  <!-- PRECIO DEL PASAJE -->
-  <button type="button" onclick="chooseTrip()">Calcular viaje</button>
 </br>
 </br>
-  <div class="container">
-    <p id="title"></p>
-    <p id="city"></p>
-    <p id="numberPassengers"></p>
-    <p id="priceAir"></p>
-  </div>
 
 </form>
 
-      <script src="js/miarchivo.js"></script> 
+      <script src="js/archivo-prueba.js"></script> 
   </body>
 </html>
